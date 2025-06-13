@@ -275,8 +275,8 @@ class LocsToHeatmaps:
         self.x_scale = out_size[0]/img_size[0]
         self.y_scale = out_size[1]/img_size[1]
         self.sigma=sigma
-        x = np.arange(0, out_size[1], dtype=np.float)
-        y = np.arange(0, out_size[0], dtype=np.float)
+        x = np.arange(0, out_size[1], dtype=float)
+        y = np.arange(0, out_size[0], dtype=float)
         self.yg, self.xg = np.meshgrid(y,x, indexing='ij')
         return
 

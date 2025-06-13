@@ -9,3 +9,6 @@ __pycache__/
 ## Large Files ##
 data/detect_checkpoints
 data/kpts_checkpoints
+
+
+.venv
