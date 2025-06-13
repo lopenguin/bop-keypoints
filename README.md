@@ -39,7 +39,7 @@ pip install -r requirements.txt
 ```
 </details>
 
-We provide sample LMO data in the `data` folder.
+We provide sample LMO data in the `data` folder. Lastly, follow the [author instructions](#data) to download the detector weights.
 
 
 Thank you to [Nathan Hughes](https://github.com/nathanhhughes) for showing me this format!
