@@ -184,7 +184,10 @@ def get_split_params(datasets_path, dataset_name, split, split_type=None):
 
   # Linemod-Occluded (LM-O).
   elif dataset_name == 'lmo':
-    p['scene_ids'] = {'train': [1, 5, 6, 8, 9, 10, 11, 12], 'test': [2]}[split]
+    if split == 'train':
+      p['scene_ids'] = [1, 5, 6, 8, 9, 10, 11, 12]
+    else:
+      p['scene_ids'] = [2]
     p['im_size'] = (640, 480)
 
     if split == 'test':

@@ -42,7 +42,8 @@ def one_each(pred, thresh=0.0):
 #*********************************************************
 parser = argparse.ArgumentParser()
 parser.add_argument('--dataset', type=str, default=None, help='dataset name')
-parser.add_argument('--split', type=str, default="test", help='dataset name')
+parser.add_argument('--split', type=str, default="test", help='folder name')
+parser.add_argument('--boproot', type=str, default='./data/bop', help='BOP root directory')
 args = parser.parse_args()
 dataset_name = args.dataset
 
@@ -50,7 +51,7 @@ dataset_name = args.dataset
 #*********************************************************
 #  Keypoint-based 6DOF estimation
 #*********************************************************
-root = './data/bop'
+root = args.boproot
 device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
 
 print('Running on:', dataset_name)
