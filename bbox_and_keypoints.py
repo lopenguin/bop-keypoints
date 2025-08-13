@@ -107,7 +107,8 @@ for i in tqdm(range(num_imgs)):
     K = db[i]['K']
     gt_objs = [lab2obj[l] for l in db[i]['labels']]
 
-    results[im_id] = {}
+    # workaround to fix saving with multiple scenes
+    results[scene_id*10000 + im_id] = {}
     
     # Object detection
     with torch.no_grad():
@@ -150,7 +151,7 @@ for i in tqdm(range(num_imgs)):
             kpts_conf = np.hstack([view_kpts, confs[:,None]])
 
             # save
-            results[im_id][obj] = kpts_conf.T.tolist()
+            results[scene_id*10000 + im_id][obj] = kpts_conf.T.tolist()
 
 
 
