@@ -23,7 +23,7 @@ class BOPDataset(torch.utils.data.Dataset):
                  vis_thresh=0.2, return_keypoints=False, return_coco=False,
                  valid_objid = None):
 
-        if split is 'train':
+        if split == 'train':
             p = get_split_params(datasets_root, dataset_name=dataset_name, 
                                  split=split, split_type='pbr')
         else:
@@ -281,7 +281,7 @@ class BOPDataset(torch.utils.data.Dataset):
         try:
             im = Image.open(img_path).convert(mode='RGB')
         except FileNotFoundError:
-            alter_path = img_path.replace('.jpg', '.png')
+            alter_path = img_path.replace('.png', '.jpg')
             im = Image.open(alter_path).convert(mode='RGB')
 
         return im
